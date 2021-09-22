@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-import List from '../List';
-import Badge from '../Badge';
-
+import List from '../List/List';
+import Badge from '../Badge/Badge';
 import closeSvg from '../../assets/img/close.svg';
 
 import './AddList.scss';
@@ -33,7 +31,7 @@ const AddList = ({ colors, onAdd }) => {
     }
     setIsLoading(true);
     axios
-      .post('http://localhost:3001/lists', {
+      .post('/lists', {
         name: inputValue,
         colorId: seletedColor
       })
